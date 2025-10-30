@@ -27,10 +27,11 @@ targets:
     default: true
     workspace:
       host: https://dbc-cc149995-22eb.cloud.databricks.com
-      root_path: /Workspace/Users/mounika.sai183@gmail.com/DevelopmentBundle/dev
+      root_path: /Workspace/Users/mounika.sai183@gmail.com/autoloader/dev
 
   qa:
     mode: production
     workspace:
       host: https://dbc-c54936f3-2049.cloud.databricks.com
       root_path: /Workspace/Users/mounika.sai1008@gmail.com/DevelopmentBundle/qa
+
