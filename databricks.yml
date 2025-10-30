@@ -1,0 +1,36 @@
+bundle:
+  name: retail_autoloader_bundle
+
+resources:
+  jobs:
+    retail_autoloader_pipeline:
+      name: "retail_autoloader_pipeline"
+      email_notifications:
+        on_start:
+          - mounika.sai183@gmail.com
+        on_success:
+          - mounika.sai183@gmail.com
+        on_failure:
+          - mounika.sai183@gmail.com
+      tasks:
+        - task_key: retail_autoloader_custom_pipeline
+          notebook_task:
+            notebook_path: /Workspace/Users/mounika.sai183@gmail.com/Practice_scenarios/03_run_all_ingestion
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-cc149995-22eb.cloud.databricks.com
+      root_path: /Workspace/Users/mounika.sai183@gmail.com/DevelopmentBundle/dev
+
+  qa:
+    mode: production
+    workspace:
+      host: https://dbc-c54936f3-2049.cloud.databricks.com
+      root_path: /Workspace/Users/mounika.sai1008@gmail.com/DevelopmentBundle/qa
